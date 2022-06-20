@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styles from './styles.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilter, getFilter } from 'redux/contactsSlice';
 
-export default function Filter({ onFilterInput }) {
-  const [filter, setFilter] = useState('');
-  useEffect(() => {
-    onFilterInput(filter);
-  }, [filter, onFilterInput]);
+export default function Filter() {
+    const dispatch = useDispatch();
+    const filter = useSelector(getFilter);
+
     return (
-      <div className={styles.wrapper}>
-        <p className={styles.text}>Find contacts by name</p>
-        <input className={styles.filter} name="filter" onChange={e => setFilter(e.target.value)} />
-      </div>
+        <div className={styles.wrapper}>
+            <p className={styles.text}>Find contacts by name</p>
+            <input
+                className={styles.filter}
+                name="filter"
+                value={filter}
+                onChange={e => dispatch(setFilter(e.target.value))}
+            />
+        </div>
     );
 }
-
-Filter.propTypes = {
-  onInput: PropTypes.func,
-};
