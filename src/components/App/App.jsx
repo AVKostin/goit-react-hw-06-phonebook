@@ -1,8 +1,8 @@
-import styles from './styles.module.css';
-import { FaJournalWhills } from 'react-icons/fa';
-import Form from '../Form';
-import Contacts from 'components/Contacts';
-import Filter from 'components/Filter';
+import styles from "./styles.module.css";
+import Contacts from "components/Contacts";
+import { FaJournalWhills } from "react-icons/fa";
+import Filter from "components/Filter";
+import Form from "../Form";
 
 export default function App() {
     return (
