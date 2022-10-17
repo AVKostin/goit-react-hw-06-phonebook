@@ -1,6 +1,6 @@
-import styles from './styles.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { setFilter, getFilter } from 'redux/contactsSlice';
+import { useSelector, useDispatch } from "react-redux";
+import { setFilter, getFilter } from "redux/contactsSlice";
+import styles from "./styles.module.css";
 
 export default function Filter() {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export default function Filter() {
                 className={styles.filter}
                 name="filter"
                 value={filter}
-                onChange={e => dispatch(setFilter(e.target.value))}
+                onChange={(e) => dispatch(setFilter(e.target.value))}
             />
         </div>
     );
